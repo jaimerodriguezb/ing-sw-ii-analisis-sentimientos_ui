@@ -29,7 +29,7 @@ function useForm() {
         return response.json();
       })
       .then((response) => {
-        setMessage(`Result: ${response.Sentimiento}`);
+        setMessage(`El mensaje expresa un sentimiento : ${response.Sentimiento}`);
         setStatus('success');
       })
       .catch((err) => {

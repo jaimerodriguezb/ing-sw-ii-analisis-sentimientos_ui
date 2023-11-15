@@ -10,7 +10,7 @@ const Form = () => {
     if (status === "success") {
         return (
             <>
-                <div className="text-2xl">Thank you!</div>
+                <div className="text-2xl">Gracias por usar este software!</div>
                 <div className="text-md">{message}</div>
             </>
         );
@@ -44,7 +44,7 @@ const Form = () => {
             {status !== "loading" && (
                 <div className="pt-0 mb-3">
                     <button
-                        className="active:bg-blue-600 hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded shadow outline-none"
+                        className="active:bg-blue-600 hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-red-500 rounded shadow outline-none"
                         type="submit"
                     >
                         Analizar Sentimiento
