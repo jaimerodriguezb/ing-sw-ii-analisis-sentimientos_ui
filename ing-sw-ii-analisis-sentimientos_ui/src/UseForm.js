@@ -14,7 +14,7 @@ function useForm() {
       .filter((input) => input.name)
       .reduce((obj, input) => Object.assign(obj, { [input.name]: input.value }), {});
 
-    fetch(`${finalFormEndpoint}?a=${encodeURIComponent(data.a)}&b=${encodeURIComponent(data.b)}&gate=${encodeURIComponent(data.gate)}`, {
+    fetch(`${finalFormEndpoint}?Comentario=${encodeURIComponent(data.Comentario)}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -29,7 +29,7 @@ function useForm() {
         return response.json();
       })
       .then((response) => {
-        setMessage(`Result: ${response.result}`);
+        setMessage(`Result: ${response.Sentimiento}`);
         setStatus('success');
       })
       .catch((err) => {

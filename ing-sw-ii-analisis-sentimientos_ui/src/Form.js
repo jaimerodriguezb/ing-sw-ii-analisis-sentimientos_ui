@@ -5,12 +5,7 @@ import Select from "react-select";
 
 const Form = () => {
     const { handleSubmit, status, message } = useForm();
-    const {FORM_ENDPOINT, gates} = getConfig();
-    const [gate, setGate] = useState(gates[0]);
-
-    const onchangeSelect = (item) => {
-        setGate(item);
-    };
+    const {FORM_ENDPOINT} = getConfig();
 
     if (status === "success") {
         return (
@@ -37,40 +32,22 @@ const Form = () => {
             method="GET"
         >
             <div className="pt-0 mb-3">
-                <input
+                <textarea
                     type="text"
-                    placeholder="a"
-                    name="a"
+                    placeholder="Comentario"
+                    name="Comentario"
                     className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
                     required
                 />
             </div>
-            <div className="pt-0 mb-3">
-                <input
-                    type="text"
-                    placeholder="b"
-                    name="b"
-                    className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
-                    required
-                />
-            </div>
-            <div className="pt-0 mb-3">
-                <Select
-                    name="gate"
-                    value={gate}
-                    onChange={onchangeSelect}
-                    options={gates}
-                    className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
-                    required
-                />
-            </div>
+            
             {status !== "loading" && (
                 <div className="pt-0 mb-3">
                     <button
                         className="active:bg-blue-600 hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded shadow outline-none"
                         type="submit"
                     >
-                        Calculate
+                        Analizar Sentimiento
                     </button>
                 </div>
             )}
